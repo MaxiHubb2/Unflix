@@ -15,9 +15,7 @@ Visita [Unflix en línea](https://unflixapp.netlify.app/) para probar la aplicac
 
 ## Login
 
-## Login
-
-![Login](https://i.imgur.com/JwSzkOK.png=100x)
+![Login](https://i.imgur.com/JwSzkOK.png =100x)
 
 ## Home
 ![Home](https://i.imgur.com/X6swWAs.png=200x)
