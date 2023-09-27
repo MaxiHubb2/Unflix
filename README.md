@@ -13,13 +13,21 @@ Visita [Unflix en línea](https://unflixapp.netlify.app/) para probar la aplicac
 - **Registro y Inicio de Sesión:** Crea una cuenta personalizada o inicia sesión para guardar tus preferencias y ver el contenido exclusivo.
 - **Diseño Responsivo:** Disfruta de Unflix en cualquier dispositivo, desde tu computadora de escritorio hasta tu teléfono móvil.
 
-## Capturas de Pantalla
+## Login
 
-![Login](https://i.imgur.com/JwSzkOK.png)
-![Home](https://i.imgur.com/X6swWAs.png)
-![Pelis](https://i.imgur.com/47CeXMf.png)
-![Series](https://i.imgur.com/Nd37sSK.png)
-![Buscador](https://i.imgur.com/O2d7iFR.png)
+![Login](https://i.imgur.com/JwSzkOK.png){width=300}
+
+## Home
+![Home](https://i.imgur.com/X6swWAs.png){width=300}
+
+## elis
+![Pelis](https://i.imgur.com/47CeXMf.png){width=300}
+
+## Series
+![Series](https://i.imgur.com/Nd37sSK.png){width=300}
+
+## Buscador
+![Buscador](https://i.imgur.com/O2d7iFR.png){width=300}
 
 
 ## Tecnologías Utilizadas
