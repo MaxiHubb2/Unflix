@@ -15,19 +15,19 @@ Visita [Unflix en línea](https://unflixapp.netlify.app/) para probar la aplicac
 
 ## Login
 
-![Login](https://i.imgur.com/JwSzkOK.png =100x)
+![Login](https://i.imgur.com/yL1NPzw.png)
 
 ## Home
-![Home](https://i.imgur.com/X6swWAs.png=200x)
+![Home](https://i.imgur.com/YO3LLgP.png)
 
 ## Pelis
-![Pelis](https://i.imgur.com/47CeXMf.png=300x)
+![Pelis](https://i.imgur.com/uhAtNBV.png)
 
 ## Series
-![Series](https://i.imgur.com/Nd37sSK.png=300x)
+![Series](https://i.imgur.com/S2b3pMt.png)
 
 ## Buscador
-![Buscador](https://i.imgur.com/O2d7iFR.png=300x)
+![Buscador](https://i.imgur.com/O2d7iFR.png)
 
 
 ## Tecnologías Utilizadas
