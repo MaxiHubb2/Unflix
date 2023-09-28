@@ -27,7 +27,7 @@ Visita [Unflix en línea](https://unflixapp.netlify.app/) para probar la aplicac
 ![Series](https://i.imgur.com/S2b3pMt.png)
 
 ## Buscador
-![Buscador](https://i.imgur.com/O2d7iFR.png)
+![Buscador](https://i.imgur.com/eXnFYw8.png)
 
 
 ## Tecnologías Utilizadas
