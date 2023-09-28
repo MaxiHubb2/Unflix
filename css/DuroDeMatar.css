@@ -1,0 +1,276 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+nav{
+	background-color: #3b9bac;
+	margin: 0px;
+	
+}
+
+.menu ul{
+
+	display: flex;
+	justify-content: space-around;
+}
+
+.menu li{
+	
+	list-style: none;
+	padding: 10px 0px;
+	border-right: 2px solid black;
+	
+}
+
+.menu a {
+    text-decoration: none;
+    color: #031225;
+    padding: 16px 125px 0px 125px;
+}
+
+.menu a:hover{
+
+    color: #11588d;
+    background-color: #fff;
+    
+}
+
+.menu i {
+
+    text-decoration: none;
+    color: #031225;
+    padding: 13px;
+    margin: 0px;
+
+}
+
+.menu i:hover{
+
+    color: #11588d;
+    background-color: #fff;
+    
+}
+
+
+.contenedor-De-Video{
+	
+	position: absolute;
+    top: 9%;
+    left: 2%;
+    border-top: 5px solid rgb(53, 148, 40);
+}
+
+
+
+#boton{
+
+	width: 100%;
+	border-radius: 6px;
+	position: relative;
+	top: 6px;
+
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+	transition: transform 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#boton:hover{
+    color: #008CBA;
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.descripcion{
+
+	position: absolute;
+	bottom: 62%;
+	left: 35%;
+	text-align: justify;
+	
+}
+
+.contenedor-De-Video h2{
+
+	position: relative;
+	top: 20px;
+	left: 5px;
+}
+
+.descripcion .Sinopsis{
+
+	position: relative;
+	bottom: -30px;
+}
+
+.Sinopsis .elContenidoDeLaSinopsis{
+
+	position: relative;
+	text-align: justify;
+	font-size: medium;
+	margin: 0px 20px 0px 0px;
+	bottom: -20px;
+	
+
+}
+
+.descripcion .Actor{
+	position: absolute;
+	top: -10%;
+}
+
+.descripcion .ActorElegido{
+	position: relative;
+	left: 25%;
+	top: -20px;
+
+}
+
+.descripcion .ActorElegido a{
+	
+	text-decoration: none;
+    color: #031225;
+    
+}
+
+.descripcion a:hover{
+
+    color: #2ccbf3;
+    background-color: #fff;
+    
+}
+
+.descripcion .duracion{
+    position: absolute;
+    top: -70px;
+}
+
+
+.descripcion .duracion p{
+    position: relative;
+    top: -18px;
+    left: 100px;
+}
+
+
+.descripcion .Titulo{
+
+	position: absolute;
+	top: -100px;
+
+}
+
+.descripcion .Titulo p{
+
+	position: relative;
+	left: 66px;
+    top: -19px;
+}
+
+.descripcion .Genero{
+	position: absolute;
+	top: -40px;
+}
+
+
+.descripcion .Genero p{
+	position: relative;
+	left: 80px;
+	top: -19px;
+}
+
+
+.contenedor article{
+	
+	text-align: center;
+	background: #ccc;
+	border:2px solid #000;
+	width: calc(26% - 70px);
+	box-sizing:border-box;
+    
+	
+}
+
+.contenedor{
+
+    display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	top: 5%;
+	
+}
+
+.item5:hover{
+	
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.item4:hover{
+	
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.item3:hover{
+	
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.item2:hover{
+	
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.item2, .item3, .item4, .item5{
+
+	position: relative;
+	top: 400px;
+		
+}
+
+
+.contenedor .item2{
+	
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition: transform 0.3s;
+   
+}
+
+.contenedor .item3{
+	
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition: transform 0.3s;
+   
+
+}
+
+.contenedor .item4{
+	
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition: transform 0.3s;
+   
+}
+
+
+.contenedor .item5{
+	
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition: transform 0.3s;
+   
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Recuperar contraseña.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/recuperar_contraseña.js"></script>
+    <title>Recuperar contraseña</title>
+</head>
+
+<body>
+    <header> <h1>Recuperar contraseña </h1></header>
+    <section class="contenedor">        
+        <form class="formulario" id="recuperar">       
+        <label for="mail">Email: </label>
+        <input id="email" type="email" name="emails" placeholder="Ingrese email" required>
+        <label for="nombreDeUsuario">Nombre de Usuario: </label>
+        <input id="nombreUsuario" type="text" name="nombreUsuario" placeholder="Ingrese nombre de usuario" required>
+
+        <input class="button" type="button" value="Enviar mail" id="submit"></input>
+        <input class= "buttoncancel" type="button" value="Cancelar" onclick= "location.href='index.html'">
+        <div id="mensaje" class="error"></div>
+    </form>
+
+        
+        
+    </section>
+</body>
+
+</html>

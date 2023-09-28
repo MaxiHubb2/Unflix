@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse - Unflix</title>
+    <link rel="stylesheet" href="css/registrarse.css" />
+  </head>
+  <body>
+    
+    <section>
+      <div class="section-left">
+        <h1>Registrarse</h1>
+      <form action="#" class="section-left-form">
+            <label for="Nombre">Nombre</label>
+            <input
+         
+              type="text"
+              name="Nombre"
+              id="Nombre"
+              placeholder="Ingrese nombre"
+            />
+            <label for="Apellido">Apellido</label>
+            <input
+           
+              type="text"
+              name="Apellido"
+              id="Apellido"
+              placeholder="Ingrese apellido"
+            />
+         
+            <label for="Email">E-mail</label>
+            <input
+            
+              type="email"
+              name="Email"
+              id="Email"
+              placeholder="Ingrese e-mail"
+            />
+        
+            <label for="Nombre de usuario">Nombre de usuario</label>
+            <input
+         
+              type="text"
+              name="Nombre de usuario"
+              id="Nombre de usuario"
+              placeholder="Nombre de usuario"
+            />
+          
+            <label for="Contraseña">Contraseña</label>
+            <input
+             
+              type="password"
+              name="Contraseña"
+              id="Contraseña"
+              placeholder="Ingrese contraseña"
+            />
+            <label for="Repetir contraseña">Repetir contraseña</label>
+            <input
+              
+              type="password"
+              name="Repetir contraseña"
+              id="Repetir contraseña"
+              placeholder="Repetir contraseña"
+            />
+          </div>
+        </form>
+        <div class="section-right">
+          <h2>Metodo de pago</h2> 
+          <form action="#" class="section-right-form">
+            <label for="Tarjeta"> Tarjeta de credito</label>
+            <input type="radio" name="Metodo de pago" id="Tarjeta" />
+            <div class="tarjeta">
+              <label for="Tarjeta"></label>
+              <input
+                type="text"
+                name="Numero de tarjeta"
+                id="Tarjeta"
+                placeholder="Numero de tarjeta"
+              />
+              <label for="Codigo de seguridad"></label>
+              <input
+                type="number"
+                name="Codigo de seguridad"
+                id="Codigo"
+                placeholder="xxx"
+              />
+            </div>
+            Cupón de pago<input 
+            type="radio" 
+            name="Metodo de pago" 
+            id="Cupon" />
+           <div>
+            <label class="cupon" for="Rapipago"></label>
+            Rapipago <input 
+            
+            type="checkbox" 
+            name="Rapipago" 
+            id="Rapipago" />
+            <label for="Pago Facil"></label>
+            Pago fácil
+            <input 
+            
+            type="checkbox" 
+            name="Pago Facil" 
+            id="Pago Facil" />
+          </div>
+          <br>
+            Transferencia bancaria
+            <input
+              type="radio"
+              name="Metodo de pago"
+              id="transferencia"
+            />
+            <br>
+            <br>
+            <p>CBU: 238562389562389</p>      
+          <div class="botones">
+          <a class="confirmar" href="index.html">Confirmar</a>
+          <a class="cancelar" href="index.html">Cancelar</a> 
+          </div>
+         </div>
+      </form>
+    </section>
+  </body>
+</html>

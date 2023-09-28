@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  padding-bottom: 50px;
+  font-size: 35px;
+}
+
+h2 {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  font-size: 35px;
+}
+body {
+  background-image: url(../img/fondo-porcorn.jpg);
+  font-family: sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5%;
+  margin-top: 200px;
+  background-color: rgba(24, 27, 75, 0.7);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.section-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3%;
+  width: 50%;
+}
+
+.section-left-form {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.section-left-form input {
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 58%;
+}
+
+.section-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3%;
+  width: 50%;
+}
+
+.section-right-form input {
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.cupon {
+  margin-left: 20px;
+}
+
+@media (max-width: 48em) {
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+  }
+  .section-left {
+    width: 100%;
+  }
+  .section-right {
+    width: 100%;
+  }
+ 
+}
+
+p {
+  margin-left: 20px;
+}
+
+input#Tarjeta {
+  margin-left: 20px;
+}
+
+input#Cupon {
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+input#Rapipago {
+  margin-right: 25px;
+}
+
+input#Codigo {
+  width: 40px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.botones {
+
+  margin-top: 50px;
+}
+
+.confirmar {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px;
+  width: 120px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: rgb(71, 209, 163);
+  color: black;
+}
+
+.cancelar {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px;
+  width: 120px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: rgb(253, 52, 52);
+  color: black;
+  margin-left: 40px;
+}
+
+.error {
+  color: red;
+}
+
+a {
+  scale: (1.1);
+}
+
+a:hover {
+  transform: scale(1.1);
+}

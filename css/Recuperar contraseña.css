@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  header{
+    padding: 20px;
+    margin: 5px;
+  }
+  h1{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+  }
+  .contenedor form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+    margin-top: 15%;
+    margin-bottom: 1%;
+    background-color: rgba(24, 27, 75, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  body {
+    background: url(../img/fondo-porcorn.jpg);
+    font-family: sans-serif;
+  }
+  
+  .button {
+    margin-top: 3%;
+    background-color: rgb(71, 209, 163);
+    text-align: center;
+    transition: transform 0.3s;
+    margin-top: 20px;
+  }
+  .buttoncancel{
+    margin-top: 3%;
+    background-color: rgb(213, 41, 41);
+    text-align: center;
+    transition: transform 0.3s;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .buttoncancel:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  form label {
+    margin-bottom: 3%;
+  }
+  form input {
+    margin-bottom: 3%;
+    padding: 2%;
+  }
+
+  #mensaje{
+    color: white;
+  }

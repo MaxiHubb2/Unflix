@@ -1,0 +1,254 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: url(../img/fondo-porcorn.jpg);
+  font-family: sans-serif;
+}
+
+nav {
+  background-color: #3b9bac;
+  margin: 0px;
+}
+
+.menu #user{
+
+  font-weight: bold;
+  background-color: white;
+}
+
+.menu ul {
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+
+  list-style: none;
+  padding: 10px 0px;
+  border-right: 2px solid black;
+
+}
+
+.menu a {
+  text-decoration: none;
+  color: #031225;
+  padding: 16px 122px 0px 125px;
+  
+}
+
+.menu a:hover {
+
+  color: #11588d;
+  background-color: #fff;}
+
+.menu i {
+
+  text-decoration: none;
+  color: #031225;
+  padding: 13px;
+}
+
+.menu i:hover {
+
+  color: #11588d;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 85%;
+}
+
+.Datos input {
+  background: rgb(214, 46, 46);
+}
+
+.section-left .Datos {
+  padding: 20px;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 44px;
+}
+
+.contenedor img {
+  background: url(../img/perfil.png) no-repeat;
+  background-size: cover;
+  width: 120px;
+  position: relative;
+  bottom: 40px;
+  }
+
+.datos {
+  padding-left: 50px;
+  flex-direction: column;
+  width: 50%;
+}
+
+.Datos {
+  align-items: center;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 5%;
+  margin-top: 200px;
+  background-color: rgba(24, 27, 75, 0.7);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.section-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.section-right-form input {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+
+}
+
+.cupon {
+  margin-left: 20px;
+}
+
+p {
+  margin-left: 20px;
+}
+
+input#Tarjeta {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+input#Cupon {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+input#Codigo {
+  width: 40px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+input#Rapipago{
+
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.transfe p{
+  margin: 5px;
+}
+
+input#transferencia {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+.botones .button {
+  padding: 20px;
+  margin-right: 50px;
+}
+
+.botones .buttoncancel {
+  padding: 20px;
+}
+
+.button {
+  margin-top: 3%;
+  background-color: rgb(71, 209, 163);
+  text-align: center;
+  transition: transform 0.3s;
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+
+}
+
+.buttoncancel {
+  margin-top: 3%;
+  background-color: rgb(213, 41, 41);
+  text-align: center;
+  transition: transform 0.3s;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.buttoncancel:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+#pswd_info {
+
+  font-size: smaller;
+
+}
+
+.caja p{
+  position: relative;
+  bottom:70px;
+}
+
+.confirmar {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px;
+  width: 120px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: rgb(71, 209, 163);
+  color: black;
+}
+
+.cancelar {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px;
+  width: 120px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: rgb(253, 52, 52);
+  color: black;
+  margin-left: 40px;
+}
