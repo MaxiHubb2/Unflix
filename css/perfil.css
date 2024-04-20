@@ -86,7 +86,7 @@ form {
 }
 
 .contenedor img {
-  background: url(../img/perfil.png) no-repeat;
+  background: url(../img/profiles.png) no-repeat;
   background-size: cover;
   width: 120px;
   position: relative;
@@ -251,4 +251,152 @@ input#transferencia {
   background-color: rgb(253, 52, 52);
   color: black;
   margin-left: 40px;
+}
+
+
+.cerrarSesion{
+  
+	position: absolute;
+	text-decoration: none;
+	border: 2px solid black;
+	padding: 5px;
+	width: 85px;
+	top: 10%;
+	left: 90%;
+	text-align: center;
+	border-radius: 2px;
+	background-color: rgb(71, 209, 163);
+	color: black;
+   
+   }
+
+   
+  .cerrarSesion img {
+    display: inline-block; 
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+}
+
+.texto-cerrar-sesion{
+	text-align: center;
+	display: flex;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+
+	body{
+        background-size: 130rem;
+		background-position: center; 
+	}
+
+	.buscador-input {
+        width: 45%; 
+        display: inline-block; 
+        margin-top: 2%; 
+    }
+
+    .seleccionador-de-categoria {
+       width: 45%;
+	   display: flex;
+	   text-align: center;
+       justify-content: center;
+	   left: 0;
+    }
+
+	.contenedor article{
+		width: 100%;
+	}
+
+    .Categoria {
+        position: relative; 
+        top: 0; 
+		left: 0;
+        margin-top: 5%; 
+        color: #fff; 
+        margin-top: 0; 
+		text-align: center;
+	}
+
+	.categoria-container {
+        background-color: #333; 
+        padding: 3%; 
+        margin-bottom: 10px; 
+    }
+
+    
+	.menu ul {
+	  display: block;
+	  animation: slideDown 0.3s ease-in-out forwards;
+	  
+	}
+	.menu li{
+		border: none;
+	}
+  
+	@keyframes slideDown {
+	  from {
+		opacity: 0;
+		transform: translateY(-10px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	nav{
+		display: flex;
+		justify-content: center;
+	}
+
+  .contenedor {
+    flex-direction: column; 
+    text-align: center;
+}
+
+.section-left,
+.section-right {
+    width: 100%; 
+}
+
+.section-right {
+    margin-top: 50px; 
+    display: flex;
+    align-items: center;
+}
+
+.section-right h2{
+  padding: 4%;
+}
+
+.section-right-form{
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+}
+
+#metPago{
+  margin-left: 1%;
+}
+.contenedor img{
+  bottom: 0;
+}
+
+p{
+  margin-left: 0;
+}
+
+.cerrarSesion{
+  left: 84%;
+  width: 10%;
+  top: 1%;
+}
+
+
+  .cerrarSesion .texto-cerrar-sesion {
+      display: inline-block;
+  }
 }

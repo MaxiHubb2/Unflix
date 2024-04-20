@@ -69,7 +69,8 @@ nav{
 
 
 
-#boton{
+#boton,
+#mostrarItems{
 
 	width: 100%;
 	border-radius: 6px;
@@ -89,7 +90,8 @@ nav{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#boton:hover{
+#boton:hover,
+#mostrarItems:hover{
     color: #008CBA;
 	cursor: pointer;
 	transform: scale(1.1);
@@ -111,14 +113,13 @@ nav{
     
 }
 
-
 .contenedor-De-Video h2{
 
 	position: relative;
-	top: 40px;
-	left: 5px;
+	bottom: 0rem;
+	top: 1rem;
+	left: 0rem;
 }
-
 
 .descripcion .Sinopsis{
 
@@ -260,7 +261,7 @@ nav{
 }
 
 .contenedor article{
-	
+	display: none;
 	border:2px solid #000;
 	width: calc(25% - 80px);
 	box-sizing:border-box;
@@ -302,7 +303,7 @@ nav{
 .item2, .item3, .item4, .item5{
 
 	position: relative;
-	top: 420px;
+	top: 24.9rem;
 		
 }
 
@@ -348,4 +349,199 @@ nav{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	transition: transform 0.3s;
    
+}
+
+
+/* CSS para ocultar el botón en pantallas grandes */
+@media (min-width: 1200px) {
+    #mostrarItems {
+        display: none;
+    }
+
+    /* Muestra los artículos en la contenedor */
+    .contenedor .item2,
+    .contenedor .item3,
+    .contenedor .item4,
+	.contenedor .item5 {
+        display: block;
+    }
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1115px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+		margin-bottom: 50px;
+    }
+    .menu ul {
+        display: block;
+    }
+    .menu li {
+        border: none;
+    }
+    .contenedor-De-Video {
+        position: relative;
+        margin-bottom: 20px;
+		margin-top: 50px; 
+		border-top: none;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+    .contenedor-De-Video h2 {
+        text-align: center; 
+    }
+   
+    .contenedor {
+        flex-direction: row;
+		margin: 1% 9%;
+	}
+    .contenedor article {
+        width: 80%; 
+        margin-bottom: 20px; 
+    }
+  
+    .ver-mas button,
+	#mostrarItems {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .ver-mas button:hover,
+	#mostrarItems:hover {
+        color: #008CBA;
+        transform: scale(1.1);
+    }
+    .ver-mas button a {
+        text-decoration: none;
+        color: white;
+    }
+
+	.contenedor-De-Video,
+	#mostrarItems {
+        display: block;
+        margin: 20px auto; 
+        width: 80%; 
+    }
+    .contenedor-De-Video article {
+        position: relative;
+        bottom: 2rem;
+    }
+
+	.contenedor-De-Video h2{
+		display: none;
+	}
+
+	#descripcion .Titulo,
+	
+	#descripcion .claseDelTitulo,
+
+	#descripcion .temporadasYCapitulos,
+
+	#descripcion .Capitulo,
+
+	#descripcion .Genero,
+
+	#descripcion .GeneroElegido, 
+	
+	#descripcion .Sinopsis,
+
+	#descripcion .Sinopsis h3,
+
+	#descripcion .Actor,
+
+	#descripcion .ActorElegido,
+
+	#descripcion .elContenidoDeLaSinopsis
+	
+	   {
+			position: relative;
+			bottom: 0;
+			top: 0;
+			left: 0;
+			text-align: center;
+			margin: 2rem;
+				
+    }
+
+	#descripcion .seleccionador-de-capitulo,
+	#descripcion .seleccionador-de-temporada {
+    position: relative;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 2rem auto; 
+    width: fit-content;
+}
+
+
+	#descripcion .elContenidoDeLaSinopsis {
+		font-size: medium;
+		text-align: justify;
+		padding: 0px 2rem 1rem;
+
+	}
+
+	.descripcion{
+		position: relative;
+		bottom: 0;
+		left: 0;
+	}
+
+    .contenedor .item2,
+	.contenedor .item3,
+    .contenedor .item4,
+    .contenedor .item5 {
+        width: 30%; 
+		height: auto;
+        margin: 0 1%; 
+		top: 0;
+    }
+
+ 
+	.Actor h3{
+		margin-bottom: 4%;
+		text-align: center;
+	}
+
+	.descripcion .Titulo h3,
+	.descripcion .duracion h3,
+	.descripcion .Genero h3,
+	.descripcion .Actor h3{
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.descripcion .Titulo p{
+		left: 0rem;
+	}
+	.descripcion .duracion p,
+	.descripcion .Actor p,
+	.descripcion .Genero p{
+		left: 1rem;
+	}
+
+	#descripcion .Sinopsis p{
+		margin: 0px 3rem;
+	}
+
+	#boton{
+		width: 27rem;
+	}
+
+
+
 }

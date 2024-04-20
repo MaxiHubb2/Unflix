@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Friends.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Js/Friends.js"></script>
     <title>Friends</title>
 </head>
 <body>
@@ -27,15 +26,7 @@
 
         </nav>
 
-		<section class="contenedor">
 		
-			<article class="item2"><a href="HowIMetYourMother.html" target="_blank"> <img src="img/How i met your mother.jpg" alt="HIYM" width="100%" height="100%"></a></article>
-            <article class="item3"><a href="Seinfield.html" target="_blank"> <img src="img/Seinfield.jpeg" alt="Seinfield" width="100%" height="100%"></a></article>
-			<article class="item4"><a href="TheOffice.html" target="_blank"> <img src="img/The offices.jpg" width="100%" height="100%" alt="TheOffice"></a></article>
-			<article class="item5"><a href="Thats70Show.html" target="_blank"> <img src="img/Thats 70 show.jpg" alt="Thats70show" width="100%" height="100%"></a></article>
-
-		</section>
-
             <section class="contenedor-De-Video">
                          
                 <article >     
@@ -55,7 +46,7 @@
             </section>  
 
                 
-                <article class="descripcion">
+                <article id="descripcion" class="descripcion">
 
                  <div class="Titulo">
 
@@ -108,11 +99,10 @@
     
                     </div>
                     
-                    <div class="Actor">
-
-                        <h3>Actores: </h3>
+                   
+                    <h3 class="Actor">Actores: </h3>
     
-                        <p class="ActorElegido"> 
+                    <p class="ActorElegido"> 
                         
                             <a href="https://es.wikipedia.org/wiki/Jennifer_Aniston" target="_blank">Jennifer Aniston</a>  / 
                             <a href="https://es.wikipedia.org/wiki/Courteney_Cox" target="_blank">Courteney Cox</a>  / 
@@ -124,7 +114,6 @@
                         </p>
     
 
-                    </div>
                     
 
                     <div class="Sinopsis">
@@ -138,9 +127,21 @@
 
                     
                 </article>
-                
 
+                <button id="mostrarItems" class="ocultarEnGrande">Mostrar similares</button>
+
+                
+                <section class="contenedor">
+		
+                    <article class="item2"><a href="HowIMetYourMother.html" target="_blank"> <img src="img/How i met your mother.jpg" alt="HIYM" width="100%" height="100%"></a></article>
+                    <article class="item3"><a href="Seinfield.html" target="_blank"> <img src="img/Seinfield.jpeg" alt="Seinfield" width="100%" height="100%"></a></article>
+                    <article class="item4"><a href="TheOffice.html" target="_blank"> <img src="img/The offices.jpg" width="100%" height="100%" alt="TheOffice"></a></article>
+                    <article class="item5"><a href="Thats70Show.html" target="_blank"> <img src="img/Thats 70 show.jpg" alt="Thats70show" width="100%" height="100%"></a></article>
+        
+                </section>
+        
 	</main>
+    <script src="Js/Friends.js"></script>
 
 </body>
 </html>

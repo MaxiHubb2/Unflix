@@ -22,7 +22,7 @@ section {
   justify-content: space-around;
   align-items: center;
   padding-left: 5%;
-  margin-top: 200px;
+  margin-top: 5%;
   background-color: rgba(24, 27, 75, 0.7);
   border-radius: 10px;
   color: white;
@@ -67,22 +67,7 @@ section {
   margin-left: 20px;
 }
 
-@media (max-width: 48em) {
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 80%;
-  }
-  .section-left {
-    width: 100%;
-  }
-  .section-right {
-    width: 100%;
-  }
- 
-}
+
 
 p {
   margin-left: 20px;
@@ -153,4 +138,43 @@ a {
 
 a:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 48em) {
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+  }
+  .section-left {
+    width: 100%;
+  }
+  .section-right {
+    width: 100%;
+  }
+ 
+}
+
+
+/* Media queries */
+@media (max-width: 1200px) {
+  .contenedor form {
+    width: 50%;
+    margin-top: 4%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor form {
+    width: 75%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .contenedor form {
+    width: 75%; 
+    margin-top: 20%;
+  }
 }

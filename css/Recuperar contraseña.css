@@ -3,8 +3,10 @@
     padding: 0;
   }
   header{
-    padding: 20px;
+    padding: 10px;
     margin: 5px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad */
+
   }
   h1{
     color: black;
@@ -16,8 +18,8 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 17%;
-    margin-top: 15%;
+    width: 50%;
+    margin-top: 4%;
     margin-bottom: 1%;
     background-color: rgba(24, 27, 75, 0.7);
     padding: 20px;
@@ -71,3 +73,25 @@
   #mensaje{
     color: white;
   }
+
+  
+/* Media queries */
+@media (max-width: 1200px) {
+  .contenedor form {
+    width: 50%;
+    margin-top: 4%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor form {
+    width: 75%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .contenedor form {
+    width: 75%; 
+    margin-top: 20%;
+  }
+}

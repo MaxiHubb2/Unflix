@@ -8,7 +8,7 @@
 
 body{
     font-family: sans-serif;
-    background: url(../img/Imagen\ de\ Unflix\ nueva.jpg) no-repeat;
+    background: url(../img/planet-earth-background.jpg) no-repeat;
     background-size: cover;
     bottom: 10px;
 	
@@ -219,7 +219,7 @@ nav{
   text-decoration: none;
   border: 2px solid black;
   padding: 5px;
-  width: 120px;
+  width: 85px;
   top: 10%;
   left: 90%;
   text-align: center;
@@ -243,6 +243,7 @@ nav{
   line-height:2;
   padding: 5px 5px 15px 10px;
 }
+
 #buscador{
 box-sizing: border-box;
     width: 100%;
@@ -251,3 +252,98 @@ box-sizing: border-box;
     border: 1px solid #151515;
 }
 
+ /* Estilos para menú desplegable */
+ .menu-toggle {
+	display: none;
+  }
+ 
+
+  .cerrarSesion img {
+    display: inline-block; 
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+}
+
+.texto-cerrar-sesion{
+	text-align: center;
+	display: flex;
+}
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 768px) {
+
+	body{
+        background-size: 130rem;
+		background-position: center; 
+	}
+
+	.contenedor article{
+		width: 32%;
+	}
+	
+
+	.buscador-input {
+        width: 45%; 
+        display: inline-block; 
+        margin-top: 2%; 
+    }
+
+    #seleccionador-de-categoria {
+        width: calc(55% - 20px); 
+        margin-top: 10px; 
+        display: inline-block; 
+        vertical-align: top; 
+    }
+
+    .Categoria {
+        position: relative; 
+        top: 0; 
+        margin-top: 5%; 
+        color: #fff;
+        margin-top: 0; 
+    
+	}
+
+	.categoria-container {
+        background-color: #333; 
+        padding: 3%; 
+        margin-bottom: 10px; 
+    }
+
+    
+	.menu ul {
+	  display: block;
+	  animation: slideDown 0.3s ease-in-out forwards;
+	  
+	}
+	.menu li{
+		border: none;
+	}
+  
+	@keyframes slideDown {
+	  from {
+		opacity: 0;
+		transform: translateY(-10px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	nav{
+		display: flex;
+		justify-content: center;
+	}
+
+	.cerrarSesion{
+		left: 84%;
+		width: 10%;
+		top: 1%;
+	}
+
+
+    .cerrarSesion .texto-cerrar-sesion {
+        display: inline-block;
+    }
+}
+  

@@ -19,8 +19,7 @@
     <main>       
         <section class="contenedor">           
             <div class="caja">
-                <img src="img/perfil.png" alt="user name">
-                <p>user name</p>
+                <img src="img/profiles.png" alt="user name">
             </div>
             <form action="#" method="post" autocomplete="off">
             <article class="section-left">
@@ -56,7 +55,7 @@
         <h2>Metodo de pago</h2> 
         <form action="#" class="section-right-form">
           <label for="Tarjeta"> Tarjeta de credito</label>
-          <input type="radio" name="Metodo de pago" />
+          <input id="metPago" type="radio" name="Metodo de pago" />
           <div class="tarjeta">
             <label for="Tarjeta"></label>
             <input
@@ -113,6 +112,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="Js/Perfil.js"></script>
 
+<a class="cerrarSesion" href="index.html" onclick="return cerrar()">
+    <img src="./img/cerrar-sesion.png" alt="Cerrar Sesión">
+    <span class="texto-cerrar-sesion">cerrar sesion</span>
+</a>
 </body>
 
 
