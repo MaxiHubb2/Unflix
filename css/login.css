@@ -26,10 +26,10 @@ body {
   margin-top: 3%;
   background-color: rgb(71, 209, 163);
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.2s ease-in-out;
 }
 
-.button:hover {
+.button.enabled:hover {
   transform: scale(1.1);
 }
 

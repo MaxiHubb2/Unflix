@@ -1,115 +1,282 @@
-let temporadas = ["1","2","3","4","5","6","7","8","9"];
-let capitulosPrimeraTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosSegundaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosTercerTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"];
-let capitulosCuartaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosQuintaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosSextaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"];
-let capitulosSeptimaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosOctavaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosNovenaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
-let capitulosDecimaTemporada = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"];
-
 $(document).ready(function(){
 
-$(".seleccionador-de-temporada").change(function(){
+    $("#seleccionador-de-categoria").change(function(){
+        let categoria=$(this).val();
+        switch(categoria){
+            case "0":
 
-    let inicial=$(this).val();
-    $(".seleccionador-de-capitulo").empty();
+                $(".contenedor .item2").show();
+                $(".contenedor .item3").show();
+                $(".contenedor .item4").show();
+                $(".contenedor .item5").show();
+                $(".contenedor article ").width(220);
+            break;
 
-    switch(inicial){
-        case "1": 
+            case "1":
+                $(".contenedor .item4").hide();
+                $(".contenedor .item5").hide();
+                $("#himym").hide();
+                $("#friends").hide();
+                $("#seinf").hide();
+                $("#deadp").show();
+                $("#termi").show();
+                $("#duro").show();
+                $(".contenedor article ").width(350);
+            break;
 
-        for(i in capitulosPrimeraTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosPrimeraTemporada[i] + "</option>");
+            case "2":
+                $(".contenedor .item4 ").show();
+                $(".contenedor .item5 ").show();
+                $(".contenedor .item2").hide();
+                $(".contenedor .item3").hide();
+                $("#office").hide();
+                $("#70show").hide();
+                $(".contenedor article ").width(350);
 
+            break;
+
+            case "3":
+                
+                $(".contenedor .item3 ").show();
+                $(".contenedor .item4 ").show();
+                $(".contenedor .item5 ").show();
+                $("#himym").show();
+
+                $("#termi").hide();
+                $("#jaws").hide();
+                $("#juras").hide();
+                $("#duro").hide();
+                $(".contenedor article ").width(220);
+
+            break;
+
+            case "4":
+                
+                $("#termi").show();
+                $("#juras").show();
+
+                $("#jaws").hide();
+                $("#deadp").hide();
+                $("#duro").hide();
+                $("#himym").hide();
+                $("#friends").hide();
+                $("#seinf").hide();
+                $("#office").hide();
+                $("#70show").hide();
+              
+              
+                $(".contenedor article ").width(320);
+
+            break;
+
+            case "5":
+                
+                $("#70show").show();
+                
+                $("#himym").show();
+                $("#friends").show();
+                $("#jaws").hide();
+                $("#deadp").hide();
+                $("#duro").hide();
+                $("#seinf").hide();
+                $("#office").hide();
+                $("#termi").hide();
+                $("#juras").hide();
+
+              
+                $(".contenedor article ").width(320);
+
+            break;
         }
-        break;
-
-        case "2": 
-
-        for(i in capitulosSegundaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosSegundaTemporada[i] + "</option>");
-
-        }
-        break;
-        case "3": 
-
-        for(i in capitulosTercerTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosTercerTemporada[i] + "</option>");
-
-        }
-        break;
-        case "4": 
-
-        for(i in capitulosCuartaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosCuartaTemporada[i] + "</option>");
-
-        }
-        break;
-        case "5": 
-
-        for(i in capitulosQuintaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosQuintaTemporada[i] + "</option>");
-
-        }
-        break;
-        case "6": 
-
-        for(i in capitulosSextaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosSextaTemporada[i] + "</option>");
-
-        }
-        break;
-        case "7": 
-
-        for(i in capitulosSeptimaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosSeptimaTemporada[i] + "</option>");
-
-        }
-        break;
-        case "8": 
-
-        for(i in capitulosOctavaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosOctavaTemporada[i] + "</option>");
-
-        }
-        break;
-        
-        case "9": 
-
-        for(i in capitulosNovenaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosNovenaTemporada[i] + "</option>");
-
-        }
-        break;
-
-        case "10": 
-
-        for(i in capitulosDecimaTemporada){
-            $(".seleccionador-de-capitulo").append("<option value="+i+">"+ capitulosDecimaTemporada[i] + "</option>");
-
-        }
-        break;
-        }
-        
-    console.log(inicial);
-
-    
-});
-
-
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const botonMostrarItems = document.getElementById("mostrarItems");
-    const articulos = document.querySelectorAll(".contenedor article");
-    let visible = true; 
-
-    botonMostrarItems.addEventListener("click", function () {
-        articulos.forEach(function (articulo) {
-            articulo.style.display = visible ? "none" : "block";
-        });
-        visible = !visible; 
     });
-});
+
+  
+        $("#buscador").keyup(function(e){
+            let buscador=$(this).val();
+            switch(buscador){
+
+                case "":
+
+                $(".item2").show();
+                $(".item3").show();
+                $(".item4").show();
+                $(".item5").show();
+                $(".contenedor article ").width(250);
+
+
+                break;
+
+
+                case  "termi" : case  "terminator": case "t":
+    
+                    $(".contenedor .item2").hide();
+                    $("#termi").show();
+                    $(".contenedor .item3").hide();
+                    $(".contenedor .item4").hide();
+                    $(".contenedor .item5").hide();
+                    $(".contenedor article ").width(350);
+                break;
+    
+                case "d": case "deadpool": case "dead": 
+
+                    $("#deadp").show();
+                    $(".contenedor .item4").hide();
+                    $(".contenedor .item5").hide();
+                    $("#himym").hide();
+                    $("#friends").hide();
+                    $("#seinf").hide();
+                    $("#termi").hide();
+                    $("#duro").hide();
+                    $(".contenedor article ").width(350);
+                break;
+    
+                case "d": case "duro de matar": case "duro":  case"dur":
+                    
+                    $(".contenedor .item4 ").hide();
+                    $(".contenedor .item5 ").hide();
+                    $(".contenedor .item2").hide();
+                    $("#duro").show();
+                    $(".contenedor .item3").hide();
+                    $("#office").hide();
+                    $("#70show").hide();
+                    $(".contenedor article ").width(350);
+    
+                break;
+    
+                case "tiburon": case "tibu": case "t":
+                    
+                    $(".contenedor .item3 ").hide();
+                    $(".contenedor .item4 ").hide();
+                    $(".contenedor .item5 ").hide();
+                    $("#himym").hide();
+                    $("#termi").hide();
+                    $("#jaws").show();
+                    $("#juras").hide();
+                    $("#duro").hide();
+                    $(".contenedor article ").width(350);
+    
+                break;
+    
+                case "jurassic park": case "jura" : case"j":
+                    
+                    $("#termi").hide();
+                    $("#juras").show();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#himym").hide();
+                    $("#friends").hide();
+                    $("#seinf").hide();
+                    $("#office").hide();
+                    $("#70show").hide();
+                  
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+    
+                case "how i met your mother": case "how": case"h":
+                    
+                    $("#70show").hide();
+                    $("#himym").show();
+                    $("#friends").hide();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#seinf").hide();
+                    $("#office").hide();
+                    $("#termi").hide();
+                    $("#juras").hide();
+    
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+
+                case "seinfield": case "sein": case"s":
+                    
+                    $("#70show").hide();
+                    $("#himym").hide();
+                    $("#friends").hide();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#seinf").show();
+                    $("#office").hide();
+                    $("#termi").hide();
+                    $("#juras").hide();
+    
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+
+                case "the office": case "the ": case "offi": case "t":
+                    
+                    $("#70show").hide();
+                    $("#himym").hide();
+                    $("#friends").hide();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#seinf").hide();
+                    $("#office").show();
+                    $("#termi").hide();
+                    $("#juras").hide();
+    
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+
+                case "thats 70 show": case "that": case "t":
+                    
+                    $("#70show").show();
+                    $("#himym").hide();
+                    $("#friends").hide();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#seinf").hide();
+                    $("#office").hide();
+                    $("#termi").hide();
+                    $("#juras").hide();
+    
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+
+                case "friends": case "frie": case "f":
+                    
+                    $("#70show").hide();
+                    $("#himym").hide();
+                    $("#friends").show();
+                    $("#jaws").hide();
+                    $("#deadp").hide();
+                    $("#duro").hide();
+                    $("#seinf").hide();
+                    $("#office").hide();
+                    $("#termi").hide();
+                    $("#juras").hide();
+    
+                  
+                    $(".contenedor article ").width(350);
+    
+                break;
+                
+            }
+        });
+    
+    
+   });
+
+   document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+  
+    menuToggle.addEventListener("click", function() {
+      menu.classList.toggle("open");
+    });
+  });
+  

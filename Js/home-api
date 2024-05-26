@@ -1,0 +1,126 @@
+$(document).ready(function() {
+    const apiKey = '725cbc87';
+
+    async function fetchMovies(query) {
+        const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data.Search || [];
+        } catch (error) {
+            console.error("Error fetching data from OMDb API:", error);
+            return [];
+        }
+    }
+
+    function createMovieArticle(movie) {
+        const article = document.createElement('article');
+        article.className = 'movie-item';
+        article.innerHTML = `
+            <a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank">
+                <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'img/placeholder.jpg'}" alt="${movie.Title}" width="100%" height="100%">
+            </a>
+        `;
+        return article;
+    }
+
+    async function loadMovies(query) {
+        const container = document.getElementById('contenedor');
+        container.innerHTML = '';  // Clear existing content
+        const movies = await fetchMovies(query);
+        if (movies) {
+            movies.forEach(movie => {
+                const article = createMovieArticle(movie);
+                container.appendChild(article);
+            });
+        }
+    }
+
+    // Load default category on page load
+    loadMovies('Action');
+
+    // Handling category selection
+    $("#seleccionador-de-categoria").change(function() {
+        const category = $(this).val();
+        let query = '';
+        switch(category) {
+            case "1":
+                query = 'Action';
+                break;
+            case "2":
+                query = 'Adventure';
+                break;
+            case "3":
+                query = 'Comedy';
+                break;
+            case "4":
+                query = 'Sci-Fi';
+                break;
+            case "5":
+                query = 'Romance';
+                break;
+            default:
+                query = 'Popular';
+        }
+        loadMovies(query);
+    });
+
+    // Handling search input
+    $("#buscador").keyup(function(e) {
+        const searchQuery = $(this).val();
+        if (searchQuery) {
+            loadMovies(searchQuery);
+        } else {
+            loadMovies('Popular');  // Default query when search is empty
+        }
+    });
+
+    // Menu toggle
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        menuToggle.addEventListener("click", function() {
+            menu.classList.toggle("open");
+        });
+    });
+
+    // Original logic for showing/hiding articles based on search input
+    $("#buscador").keyup(function(e){
+        let buscador = $(this).val().toLowerCase();
+        $(".movie-item").each(function() {
+            const title = $(this).find("img").attr("alt").toLowerCase();
+            if (title.includes(buscador)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+
+    // Original logic for showing/hiding articles based on category selection
+    $("#seleccionador-de-categoria").change(function() {
+        const category = $(this).val();
+        let query = '';
+        switch(category) {
+            case "1":
+                query = 'Action';
+                break;
+            case "2":
+                query = 'Adventure';
+                break;
+            case "3":
+                query = 'Comedy';
+                break;
+            case "4":
+                query = 'Sci-Fi';
+                break;
+            case "5":
+                query = 'Romance';
+                break;
+            default:
+                query = 'Popular';
+        }
+        loadMovies(query);
+    });
+});

@@ -1,282 +1,91 @@
-$(document).ready(function(){
+$(document).ready(function() {
+    const apiKey = "725cbc87";
+    const peliculas = [
+        { id: "termi", title: "The Terminator", url: "Terminator.html" },
+        { id: "deadp", title: "Deadpool", url: "Deadpool.html" },
+        { id: "duro", title: "Die Hard", url: "DuroDeMatar.html" },
+        { id: "jaws", title: "Jaws", url: "Jaws.html" },
+        { id: "juras", title: "Jurassic Park", url: "JurassicPark.html" },
+        { id: "himym", title: "How I Met Your Mother", url: "HowIMetYourMother.html" },
+        { id: "seinf", title: "Seinfeld", url: "Seinfield.html" },
+        { id: "office", title: "The Office", url: "TheOffice.html" },
+        { id: "70show", title: "That '70s Show", url: "Thats70Show.html" },
+        { id: "friends", title: "Friends", url: "Friends.html" }
+    ];
 
-    $("#seleccionador-de-categoria").change(function(){
-        let categoria=$(this).val();
-        switch(categoria){
+    function cargarImagenes() {
+        peliculas.forEach(pelicula => {
+            $.getJSON(`https://www.omdbapi.com/?t=${encodeURIComponent(pelicula.title)}&apikey=${apiKey}`, function(data) {
+                if (data.Poster && data.Poster !== "N/A") {
+                    $(`#${pelicula.id}`).html(`<a href="${pelicula.url}" target="_blank"><img src="${data.Poster}" alt="${pelicula.title}" width="100%" height="100%"></a>`);
+                }
+            });
+        });
+    }
+
+    cargarImagenes();
+
+    $("#seleccionador-de-categoria").change(function() {
+        let categoria = $(this).val();
+        switch (categoria) {
             case "0":
-
-                $(".contenedor .item2").show();
-                $(".contenedor .item3").show();
-                $(".contenedor .item4").show();
-                $(".contenedor .item5").show();
-                $(".contenedor article ").width(220);
-            break;
-
+                $(".contenedor .item2, .contenedor .item3, .contenedor .item4, .contenedor .item5").show();
+                $(".contenedor article").width(200);
+                break;
             case "1":
-                $(".contenedor .item4").hide();
-                $(".contenedor .item5").hide();
-                $("#himym").hide();
-                $("#friends").hide();
-                $("#seinf").hide();
-                $("#deadp").show();
-                $("#termi").show();
-                $("#duro").show();
-                $(".contenedor article ").width(350);
-            break;
-
+                $(".contenedor .item4, .contenedor .item5, #himym, #friends, #seinf").hide();
+                $("#deadp, #termi, #duro").show();
+                $(".contenedor article").width(200);
+                break;
             case "2":
-                $(".contenedor .item4 ").show();
-                $(".contenedor .item5 ").show();
-                $(".contenedor .item2").hide();
-                $(".contenedor .item3").hide();
-                $("#office").hide();
-                $("#70show").hide();
-                $(".contenedor article ").width(350);
-
-            break;
-
+                $(".contenedor .item4, .contenedor .item5").show();
+                $(".contenedor .item2, .contenedor .item3, #office, #70show").hide();
+                $(".contenedor article").width(200);
+                break;
             case "3":
-                
-                $(".contenedor .item3 ").show();
-                $(".contenedor .item4 ").show();
-                $(".contenedor .item5 ").show();
-                $("#himym").show();
-
-                $("#termi").hide();
-                $("#jaws").hide();
-                $("#juras").hide();
-                $("#duro").hide();
-                $(".contenedor article ").width(220);
-
-            break;
-
+                $(".contenedor .item3, .contenedor .item4, .contenedor .item5, #himym").show();
+                $("#termi, #jaws, #juras, #duro").hide();
+                $(".contenedor article").width(200);
+                break;
             case "4":
-                
-                $("#termi").show();
-                $("#juras").show();
-
-                $("#jaws").hide();
-                $("#deadp").hide();
-                $("#duro").hide();
-                $("#himym").hide();
-                $("#friends").hide();
-                $("#seinf").hide();
-                $("#office").hide();
-                $("#70show").hide();
-              
-              
-                $(".contenedor article ").width(320);
-
-            break;
-
+                $("#termi, #juras").show();
+                $("#jaws, #deadp, #duro, #himym, #friends, #seinf, #office, #70show").hide();
+                $(".contenedor article").width(200);
+                break;
             case "5":
-                
-                $("#70show").show();
-                
-                $("#himym").show();
-                $("#friends").show();
-                $("#jaws").hide();
-                $("#deadp").hide();
-                $("#duro").hide();
-                $("#seinf").hide();
-                $("#office").hide();
-                $("#termi").hide();
-                $("#juras").hide();
-
-              
-                $(".contenedor article ").width(320);
-
-            break;
+                $("#70show, #himym, #friends").show();
+                $("#jaws, #deadp, #duro, #seinf, #office, #termi, #juras").hide();
+                $(".contenedor article").width(200);
+                break;
         }
     });
 
-  
-        $("#buscador").keyup(function(e){
-            let buscador=$(this).val();
-            switch(buscador){
-
-                case "":
-
-                $(".item2").show();
-                $(".item3").show();
-                $(".item4").show();
-                $(".item5").show();
-                $(".contenedor article ").width(250);
-
-
-                break;
-
-
-                case  "termi" : case  "terminator": case "t":
-    
-                    $(".contenedor .item2").hide();
-                    $("#termi").show();
-                    $(".contenedor .item3").hide();
-                    $(".contenedor .item4").hide();
-                    $(".contenedor .item5").hide();
-                    $(".contenedor article ").width(350);
-                break;
-    
-                case "d": case "deadpool": case "dead": 
-
-                    $("#deadp").show();
-                    $(".contenedor .item4").hide();
-                    $(".contenedor .item5").hide();
-                    $("#himym").hide();
-                    $("#friends").hide();
-                    $("#seinf").hide();
-                    $("#termi").hide();
-                    $("#duro").hide();
-                    $(".contenedor article ").width(350);
-                break;
-    
-                case "d": case "duro de matar": case "duro":  case"dur":
-                    
-                    $(".contenedor .item4 ").hide();
-                    $(".contenedor .item5 ").hide();
-                    $(".contenedor .item2").hide();
-                    $("#duro").show();
-                    $(".contenedor .item3").hide();
-                    $("#office").hide();
-                    $("#70show").hide();
-                    $(".contenedor article ").width(350);
-    
-                break;
-    
-                case "tiburon": case "tibu": case "t":
-                    
-                    $(".contenedor .item3 ").hide();
-                    $(".contenedor .item4 ").hide();
-                    $(".contenedor .item5 ").hide();
-                    $("#himym").hide();
-                    $("#termi").hide();
-                    $("#jaws").show();
-                    $("#juras").hide();
-                    $("#duro").hide();
-                    $(".contenedor article ").width(350);
-    
-                break;
-    
-                case "jurassic park": case "jura" : case"j":
-                    
-                    $("#termi").hide();
-                    $("#juras").show();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#himym").hide();
-                    $("#friends").hide();
-                    $("#seinf").hide();
-                    $("#office").hide();
-                    $("#70show").hide();
-                  
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-    
-                case "how i met your mother": case "how": case"h":
-                    
-                    $("#70show").hide();
-                    $("#himym").show();
-                    $("#friends").hide();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#seinf").hide();
-                    $("#office").hide();
-                    $("#termi").hide();
-                    $("#juras").hide();
-    
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-
-                case "seinfield": case "sein": case"s":
-                    
-                    $("#70show").hide();
-                    $("#himym").hide();
-                    $("#friends").hide();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#seinf").show();
-                    $("#office").hide();
-                    $("#termi").hide();
-                    $("#juras").hide();
-    
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-
-                case "the office": case "the ": case "offi": case "t":
-                    
-                    $("#70show").hide();
-                    $("#himym").hide();
-                    $("#friends").hide();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#seinf").hide();
-                    $("#office").show();
-                    $("#termi").hide();
-                    $("#juras").hide();
-    
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-
-                case "thats 70 show": case "that": case "t":
-                    
-                    $("#70show").show();
-                    $("#himym").hide();
-                    $("#friends").hide();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#seinf").hide();
-                    $("#office").hide();
-                    $("#termi").hide();
-                    $("#juras").hide();
-    
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-
-                case "friends": case "frie": case "f":
-                    
-                    $("#70show").hide();
-                    $("#himym").hide();
-                    $("#friends").show();
-                    $("#jaws").hide();
-                    $("#deadp").hide();
-                    $("#duro").hide();
-                    $("#seinf").hide();
-                    $("#office").hide();
-                    $("#termi").hide();
-                    $("#juras").hide();
-    
-                  
-                    $(".contenedor article ").width(350);
-    
-                break;
-                
+    $("#buscador").keyup(function(e) {
+        let buscador = $(this).val().toLowerCase();
+        if (!buscador) {
+            $(".item2, .item3, .item4, .item5").show();
+            $(".contenedor article").width(200);
+            return;
+        }
+        $(".contenedor article").hide();
+        peliculas.forEach(pelicula => {
+            if (pelicula.title.toLowerCase().includes(buscador)) {
+                $(`#${pelicula.id}`).show();
+                $(".contenedor article").width(200);
             }
         });
-    
-    
-   });
-
-   document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-  
-    menuToggle.addEventListener("click", function() {
-      menu.classList.toggle("open");
     });
-  });
-  
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        menuToggle.addEventListener("click", function() {
+            menu.classList.toggle("open");
+        });
+    });
+
+    function cerrar() {
+        localStorage.clear();
+    }
+});
