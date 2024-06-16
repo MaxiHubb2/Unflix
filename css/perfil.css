@@ -7,6 +7,26 @@
   font-family: sans-serif;
 }
 
+/* Botón de administrador */
+.admin-button{
+  
+	position: absolute;
+	text-decoration: none;
+	border: 2px solid black;
+	padding: 5px;
+	width: 110px;
+	top: 14%;
+	left: 44%;
+	text-align: center;
+	border-radius: 2px;
+	background-color: rgb(71, 209, 163);
+	color: black;
+}
+
+.admin-button:hover {
+  background-color: #0056b3;
+}
+
 body {
   background: url(../img/fondo-porcorn.jpg);
   font-family: sans-serif;
@@ -261,8 +281,8 @@ input#transferencia {
 	border: 2px solid black;
 	padding: 5px;
 	width: 85px;
-	top: 10%;
-	left: 90%;
+	top: 14%;
+	left: 89%;
 	text-align: center;
 	border-radius: 2px;
 	background-color: rgb(71, 209, 163);
@@ -398,5 +418,20 @@ p{
 
   .cerrarSesion .texto-cerrar-sesion {
       display: inline-block;
+  }
+
+  .admin-button{
+  
+    position: absolute;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 5px;
+    width: 110px;
+    top: 1%;
+    left: 2%;
+    text-align: center;
+    border-radius: 2px;
+    background-color: rgb(71, 209, 163);
+    color: black;
   }
 }

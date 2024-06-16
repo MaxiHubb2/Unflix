@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js" defer></script>
+    <link rel="icon" href="img/favicon.ico">
+    <title>Administrar Películas</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="Home.html">Home</a>
+        <a href="Series.html">Series</a>
+        <a href="Peliculas.html">Películas</a>
+        <a href="Perfil.html">Perfil</a>
+    </nav>
+    <div class="admin-container">
+        <h2>Administrar Películas</h2>
+        <div class="form-container">
+            <form id="formulario-crear-pelicula">
+                <label for="titulo-pelicula">Título:</label>
+                <input type="text" id="titulo-pelicula" name="titulo_de_la_pelicula" required>
+                <label for="año-pelicula">Año de Lanzamiento:</label>
+                <input type="number" id="año-pelicula" name="año_de_lanzamiento" required>
+                <label for="poster-pelicula">URL del Póster:</label>
+                <input type="text" id="poster-pelicula" name="poster" required>
+                <button type="submit">Añadir Película</button>
+            </form>
+            <form id="formulario-buscar-pelicula">
+                <label for="buscar-titulo-pelicula">Buscar por Título:</label>
+                <input type="text" id="buscar-titulo-pelicula" name="buscar-titulo" required>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <button id="ver-todas">Ver Todas</button>
+        <h3>Listado de Películas</h3>
+        <table id="tabla-peliculas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Año</th>
+                    <th>Póster</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se cargarán las películas desde la API -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal de Edición -->
+    <div id="modal-editar-pelicula" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="formulario-editar-pelicula">
+                <input type="hidden" id="id-editar-pelicula">
+                <label for="editar-titulo-pelicula">Título:</label>
+                <input type="text" id="editar-titulo-pelicula">
+                <label for="editar-año-pelicula">Año de Lanzamiento:</label>
+                <input type="number" id="editar-año-pelicula">
+                <label for="editar-poster-pelicula">URL del Póster:</label>
+                <input type="text" id="editar-poster-pelicula">
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

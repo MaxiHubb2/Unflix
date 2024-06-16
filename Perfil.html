@@ -9,8 +9,8 @@
 </head>
 <body>
     <nav class="menu">
-        <ul >            
-            <li><i class="fi fi-rs-home" ><a href="Home.html">Home</a></i></li>
+        <ul>            
+            <li><i class="fi fi-rs-home"><a href="Home.html">Home</a></i></li>
             <li><i class="fi fi-rr-film"><a href="Series.html">Series</a></i></li>
             <li><i class="fi fi-rs-film"><a href="Peliculas.html">Peliculas</a></i></li>
             <li><i id="user" class="fi fi-rs-user"><a href="Perfil.html">Perfil</a></i></li>            
@@ -22,101 +22,63 @@
                 <img src="img/profiles.png" alt="user name">
             </div>
             <form action="#" method="post" autocomplete="off">
-            <article class="section-left">
-                <div class="Datos">
-                    <h3>Email:</h3>
-                    <p>usuario@gmail.com</p>
-                </div>
-                <div class="Datos">
-                    <h3>Contraseña:</h3>
-                    <p> ***************</p>
-                </div>
-                <div class="Datos">
-    
-                    <label for="pass">Nueva contraseña:</label>
-                    <input  id="contrasenia" type="password" name="pass"class="required"><br>
-                    <span id="mensaje"></span>
-                    <br>
-                     
-                    <label for="pass">Repetir contraseña: </label>
-                    <input id="repContrasenia" type="password" name="pass" class="required">
-                   
-                    <span id="mensaje"></span>
-
-                </div>   
-
-                <a class="confirmar" href="Home.html" onclick="return validar()">Confirmar</a>  
-                <a class="cancelar" href="Perfil.html">Cancelar</a>
-            </article>
-        </form>
-
-    </form>
-    <div class="section-right">
-        <h2>Metodo de pago</h2> 
-        <form action="#" class="section-right-form">
-          <label for="Tarjeta"> Tarjeta de credito</label>
-          <input id="metPago" type="radio" name="Metodo de pago" />
-          <div class="tarjeta">
-            <label for="Tarjeta"></label>
-            <input
-              type="text"
-              name="Numero de tarjeta"
-              id="Tarjeta"
-              placeholder="Numero de tarjeta"
-              value=""
-              required
-            />
-            <label for="Codigo de seguridad"></label>
-            <input
-              type="number"
-              name="Codigo de seguridad"
-              id="Codigo"
-              placeholder="xxx"
-              value=""
-              required
-            />
-          </div>
-          Cupón de pago<input 
-          type="radio" 
-          name="Metodo de pago" 
-          id="Cupon" />
-         <div class="cupondepago">
-          <label class="cupon" for="Rapipago"></label>
-          Rapipago <input 
-          
-          type="checkbox" 
-          name="Rapipago" 
-          id="Rapipago" />
-          <label for="Pago Facil"></label>
-          Pago fácil
-          <input 
-          
-          type="checkbox" 
-          name="Pago Facil" 
-          id="Pago Facil" />
-        </div>
-
-        <div class="transfe">
-
-         <p>Transferencia bancaria</p>    
-        
-        </div>
-        <input type="radio" name="Metodo de pago" id="transferencia"/>
-          
-          <br>
-          <br>
-          <p>CBU: 238562389562389</p>      
-  </form>
+                <article class="section-left">
+                    <div class="Datos">
+                        <h3>Email:</h3>
+                        <p>usuario@gmail.com</p>
+                    </div>
+                    <div class="Datos">
+                        <h3>Contraseña:</h3>
+                        <p> ***************</p>
+                    </div>
+                    <div class="Datos">
+                        <label for="pass">Nueva contraseña:</label>
+                        <input id="contrasenia" type="password" name="pass" class="required"><br>
+                        <span id="mensaje"></span>
+                        <br>
+                        <label for="pass">Repetir contraseña: </label>
+                        <input id="repContrasenia" type="password" name="pass" class="required">
+                        <span id="mensaje"></span>
+                    </div>   
+                    <a class="confirmar" href="Home.html" onclick="return validar()">Confirmar</a>  
+                    <a class="cancelar" href="Perfil.html">Cancelar</a>
+                    <!-- Botón para ir a la sección de administrador -->
+                    <a id="admin-button" class="admin-button" href="admin.html" style="display: none;">Administrar Películas</a>
+                </article>
+            </form>
+            <div class="section-right">
+                <h2>Método de pago</h2> 
+                <form action="#" class="section-right-form">
+                    <label for="Tarjeta">Tarjeta de crédito</label>
+                    <input id="metPago" type="radio" name="Metodo de pago"/>
+                    <div class="tarjeta">
+                        <label for="Tarjeta"></label>
+                        <input type="text" name="Numero de tarjeta" id="Tarjeta" placeholder="Número de tarjeta" value="" required/>
+                        <label for="Codigo de seguridad"></label>
+                        <input type="number" name="Codigo de seguridad" id="Codigo" placeholder="xxx" value="" required/>
+                    </div>
+                    Cupón de pago<input type="radio" name="Metodo de pago" id="Cupon"/>
+                    <div class="cupondepago">
+                        <label class="cupon" for="Rapipago"></label>
+                        Rapipago <input type="checkbox" name="Rapipago" id="Rapipago"/>
+                        <label for="Pago Facil"></label>
+                        Pago fácil <input type="checkbox" name="Pago Facil" id="Pago Facil"/>
+                    </div>
+                    <div class="transfe">
+                        <p>Transferencia bancaria</p>    
+                    </div>
+                    <input type="radio" name="Metodo de pago" id="transferencia"/>
+                    <br><br>
+                    <p>CBU: 238562389562389</p>      
+                </form>
+            </div>
         </section>
-       </main>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="Js/Perfil.js"></script>
-
-<a class="cerrarSesion" href="index.html" onclick="return cerrar()">
-    <img src="./img/cerrar-sesion.png" alt="Cerrar Sesión">
-    <span class="texto-cerrar-sesion">cerrar sesion</span>
-</a>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/perfil.js"></script>
+    <a class="cerrarSesion" href="index.html" onclick="return cerrar()">
+        <img src="./img/cerrar-sesion.png" alt="Cerrar Sesión">
+        <span class="texto-cerrar-sesion">Cerrar sesión</span>
+    </a>
 </body>
-
-
 </html>

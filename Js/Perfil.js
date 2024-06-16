@@ -1,51 +1,3 @@
-/*//obtener tu form desde el HTML
-var form = document.getElementById('section-right-form').elements;
-for(var i = 0; i<= form.length - 1; i++){
-    //aquí puedes agregar mas validaciones que ocupes
-    //para efectos de prueba, yo solo permite que se obtuvieran los input de text.
-    if(form[i].type == 'text'){
-        //imprimir en consola el valor
-        console.log(form[i].value);
-        //la key sera el ID de tu elemento y despues se asigna el valor
-        localStorage.setItem(form[i].id, JSON.stringify(form[i].value));
-    }
-}
-//para probar que se guardaron bien los elementos, probamos en consola.
-console.log(localStorage);
-
-
-var numeroDeTarjeta =[];
-var elementoBotonDeEnviar = document.querySelector("#guardarCambio");
-
-elementoBotonDeEnviar.addEventListener("click", guardar_localStorage);
-
-function guardar_localStorage(){
-
-    var variableTarjeta = document.querySelector("#Tarjeta").value;
-    let tarjeta_a_usar = "Visa";
-
-    numeroDeTarjeta.push(variableTarjeta);
-
-    localStorage.setItem("tarjeta_a_usar", JSON.stringify(numeroDeTarjeta));
-}
-
-function comprobar_guardado(){
-    var tarjetaGuardada = localStorage.getItem("#Tarjeta");
-    var codigoGuardado = localStorage.getItem("#Codigo");
-
-    var numeroDeTarjeta = document.getElementById("")
-}
-
-var numeroDeTarjeta = document.getElementById("#Tarjeta");
-var codigoDeSeguridad = document.getElementById("#Codigo");
-
-function guardar_localStorage(){
-
-    localStorage.setItem("numeroDeTarjeta", numeroDeTarjeta);
-    localStorage.setItem("codigoDeSeguridad", codigoDeSeguridad);
-    
-}
-*/
 $(document).ready(function () {
     $("#guardarCambio").click(function () {
       var numeroDeTarjeta = $("#Tarjeta").val();
@@ -105,4 +57,18 @@ function validar() {
     }
 
 
+    
+
 }
+
+$(document).ready(function() {
+    const userRoles = ['USER', 'ADMIN'];
+
+    function checkAdminRole(roles) {
+        return roles.includes('ADMIN');
+    }
+
+    if (checkAdminRole(userRoles)) {
+        $('#admin-button').show();
+    }
+});
