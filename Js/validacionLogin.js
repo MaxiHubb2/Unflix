@@ -46,11 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
     passwordInput.addEventListener('input', validateForm);
 });
 
-
 document.getElementById("loginForm").addEventListener("submit", function(event) {
-    if (!validar()) {
-        event.preventDefault();
-    } else {
-        window.location.assign("Home.html");
+    event.preventDefault();
+    if (validar()) {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "usuario@ejemplo.com" && password === "contraseña123") {
+            window.location.assign("Home.html");
+        } else {
+            document.getElementById("mensaje").innerHTML = "<p>Nombre de usuario o contraseña incorrectos</p>";
+        }
     }
 });
