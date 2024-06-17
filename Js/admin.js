@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = 'perpetual-fascination-production.up.railway.app/api/peliculas';
+    const apiUrl = 'https://unflixapp.netlify.app/perpetual-fascination-production.up.railway.app/api/peliculas';
 
     // Función para obtener todas las películas
     async function obtenerPeliculas() {
