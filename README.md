@@ -29,6 +29,8 @@ Visita [Unflix en línea](https://unflixapp.netlify.app/) para probar la aplicac
 ## Buscador
 ![Buscador](https://i.imgur.com/eXnFYw8.png)
 
+### Administrador de Película
+![Detalles de Película](https://i.imgur.com/UIMvjsH.png)
 
 ## Tecnologías Utilizadas
 
