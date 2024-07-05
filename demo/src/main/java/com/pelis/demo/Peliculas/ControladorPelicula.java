@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
+
 
 @RestController
 @RequestMapping("/api/peliculas")
@@ -20,13 +20,8 @@ public class ControladorPelicula {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pelicula> obtenerPeliculaPorId(@PathVariable int id) {
-        Pelicula pelicula = servicioPelicula.obtenerPeliculaPorId(id);
-        if (pelicula != null) {
-            return ResponseEntity.ok(pelicula);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Pelicula obtenerPeliculaPorId(@PathVariable int id) {
+        return servicioPelicula.obtenerPeliculaPorId(id);
     }
 
     @PostMapping
@@ -35,23 +30,13 @@ public class ControladorPelicula {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pelicula> actualizarPelicula(@PathVariable int id, @RequestBody Pelicula pelicula) {
-        Pelicula peliculaActualizada = servicioPelicula.actualizarPelicula(id, pelicula);
-        if (peliculaActualizada != null) {
-            return ResponseEntity.ok(peliculaActualizada);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Pelicula actualizarPelicula(@PathVariable int id, @RequestBody Pelicula pelicula) {
+        return servicioPelicula.actualizarPelicula(id, pelicula);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarPelicula(@PathVariable int id) {
-        boolean eliminada = servicioPelicula.eliminarPelicula(id);
-        if (eliminada) {
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public void eliminarPelicula(@PathVariable int id) {
+        servicioPelicula.eliminarPelicula(id);
     }
 
     @GetMapping("/buscar")
@@ -59,4 +44,3 @@ public class ControladorPelicula {
         return servicioPelicula.buscarPeliculasPorTitulo(titulo);
     }
 }
-

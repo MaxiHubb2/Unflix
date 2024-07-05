@@ -10,6 +10,8 @@
     <title>Administrar Películas</title>
 </head>
 <body>
+    <div class="mensaje-contenedor"></div>
+
     <nav class="nav">
         <a href="Home.html">Home</a>
         <a href="Series.html">Series</a>
@@ -18,38 +20,42 @@
     </nav>
     <div class="admin-container">
         <h2>Administrar Películas</h2>
-        <div class="form-container">
-            <form id="formulario-crear-pelicula">
-                <label for="titulo-pelicula">Título:</label>
-                <input type="text" id="titulo-pelicula" name="titulo_de_la_pelicula" required>
-                <label for="año-pelicula">Año de Lanzamiento:</label>
-                <input type="number" id="año-pelicula" name="año_de_lanzamiento" required>
-                <label for="poster-pelicula">URL del Póster:</label>
-                <input type="text" id="poster-pelicula" name="poster" required>
-                <button type="submit">Añadir Película</button>
-            </form>
-            <form id="formulario-buscar-pelicula">
-                <label for="buscar-titulo-pelicula">Buscar por Título:</label>
-                <input type="text" id="buscar-titulo-pelicula" name="buscar-titulo" required>
-                <button type="submit">Buscar</button>
-            </form>
+        <div class="content-wrapper">
+            <div class="form-container">
+                <form id="formulario-crear-pelicula">
+                    <label for="titulo-pelicula">Título:</label>
+                    <input type="text" id="titulo-pelicula" name="titulo_de_la_pelicula" required>
+                    <label for="año-pelicula">Año de Lanzamiento:</label>
+                    <input type="number" id="año-pelicula" name="año_de_lanzamiento" required>
+                    <label for="poster-pelicula">URL del Póster:</label>
+                    <input type="text" id="poster-pelicula" name="poster" required>
+                    <button type="submit">Añadir Película</button>
+                </form>
+                <form id="formulario-buscar-pelicula">
+                    <label for="buscar-titulo-pelicula">Buscar por Título:</label>
+                    <input type="text" id="buscar-titulo-pelicula" name="buscar-titulo" required>
+                    <button type="submit">Buscar</button>
+                </form>
+                <button id="ver-todas">Ver Todas</button>
+            </div>
+            <div class="list-container">
+                <h3>Listado de Películas</h3>
+                <table id="tabla-peliculas">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Año</th>
+                            <th>Póster</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se cargarán las películas desde la API -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <button id="ver-todas">Ver Todas</button>
-        <h3>Listado de Películas</h3>
-        <table id="tabla-peliculas">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Año</th>
-                    <th>Póster</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aquí se cargarán las películas desde la API -->
-            </tbody>
-        </table>
     </div>
     <!-- Modal de Edición -->
     <div id="modal-editar-pelicula" class="modal">
