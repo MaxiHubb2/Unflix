@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var apiUrl = 'https://perpetual-fascination-production.up.railway.app/api/peliculas';
+    var apiUrl = 'https://rgiongzmlknshhkijite.supabase.co/api/peliculas';
 
     // Muestra un mensaje en la pantalla durante 5 segundos
     function mostrarMensaje(mensaje, tipo) {
