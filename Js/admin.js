@@ -1,6 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var apiUrl = 'http://localhost:8080/api/peliculas';
 
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const url = ENV.SUPABASE_URL;
+    const key = ENV.SUPABASE_KEY;
+    const supabaseClient = supabase.createClient(url, key); 
+    const table = "peliculas";
+
+    const corsHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+      };
+      
     // Muestra un mensaje en la pantalla durante 5 segundos
     function mostrarMensaje(mensaje, tipo) {
         var mensajeDiv = document.createElement('div');
@@ -18,34 +28,89 @@ document.addEventListener("DOMContentLoaded", function() {
             mensajeDiv.remove();
         }, 5000);
     }
-
-    // Obtiene la lista de todas las películas del API
-    function obtenerPeliculas() {
-        return fetch(apiUrl).then(function(respuesta) {
-            return respuesta.ok ? respuesta.json() : [];
-        }).catch(function(error) {
-            console.error("Error obteniendo las películas", error);
-            return [];
-        });
+ // Obtiene la lista de todas las películas desde Supabase
+ async function obtenerPeliculas() {
+    try {
+        let { data: peliculas, error } = await supabaseClient
+            .from(table)
+            .select('*');
+        if (error) throw error;
+        return peliculas || [];
+    } catch (error) {
+        console.error("Error obteniendo las películas", error);
+        return [];
     }
+}
 
-    // Obtiene una película por su ID del API
-    function obtenerPeliculaPorId(id) {
-        return fetch(apiUrl + '/' + id).then(function(respuesta) {
-            return respuesta.ok ? respuesta.json() : null;
-        }).catch(function(error) {
-            console.error("Error obteniendo la película por ID", error);
-            return null;
-        });
+// Obtiene una película por su ID desde Supabase
+async function obtenerPeliculaPorId(id) {
+    try {
+        let { data: pelicula, error } = await supabaseClient
+            .from(table)
+            .select('*')
+            .eq('id', id)
+            .single();
+        if (error) throw error;
+        return pelicula;
+    } catch (error) {
+        console.error("Error obteniendo la película por ID", error);
+        return null;
     }
+}
+
+// Crea una nueva película en Supabase
+async function crearPelicula(datosPelicula) {
+    try {
+        const { data, error } = await supabaseClient
+            .from(table)
+            .insert([datosPelicula], { returning: 'minimal' }) // 'minimal' para obtener menos datos en la respuesta
+            .select('*', corsHeaders); // Aplica corsHeaders aquí
+        if (error) throw error;
+        return data;
+    } catch (error) {
+        console.error("Error añadiendo la película", error);
+    }
+}
+
+
+// Elimina una película en Supabase
+async function eliminarPelicula(id) {
+    try {
+        const { data, error } = await supabaseClient
+            .from(table)
+            .delete({ returning: 'minimal' }) // 'minimal' para obtener menos datos en la respuesta
+            .eq('id', id)
+            .select('*', corsHeaders); // Aplica corsHeaders aquí
+        if (error) throw error;
+        return data;
+    } catch (error) {
+        console.error("Error eliminando la película", error);
+    }
+}
+
+
+// Edita una película existente en Supabase
+async function editarPelicula(id, datosPelicula) {
+    try {
+        const { data, error } = await supabaseClient
+            .from(table)
+            .update(datosPelicula, { returning: 'minimal' }) // 'minimal' para obtener menos datos en la respuesta
+            .eq('id', id)
+            .select('*', corsHeaders); // Aplica corsHeaders aquí
+        if (error) throw error;
+        return data;
+    } catch (error) {
+        console.error("Error editando la película", error);
+    }
+}
 
     // Crea una fila HTML para una película
     function crearFilaPelicula(pelicula) {
         var fila = '<tr data-id="' + pelicula.id + '">';
         fila += '<td>' + pelicula.id + '</td>';
-        fila += '<td>' + pelicula.tituloDeLaPelicula + '</td>';
-        fila += '<td>' + pelicula.añoDeLanzamiento + '</td>';
-        fila += '<td><img src="' + pelicula.poster + '" alt="' + pelicula.tituloDeLaPelicula + '" width="50" onerror="this.onerror=null; this.src=\'img/placeholder.png\';"></td>';
+        fila += '<td>' + pelicula.titulo_de_la_pelicula  + '</td>';
+        fila += '<td>' + pelicula.año_de_lanzamiento  + '</td>';
+        fila += '<td><img src="' + pelicula.poster + '" alt="' + pelicula.titulo_de_la_pelicula + '" width="50" onerror="this.onerror=null; this.src=\'img/placeholder.png\';"></td>';
         fila += '<td><button class="editar" data-id="' + pelicula.id + '">Editar</button><button class="eliminar" data-id="' + pelicula.id + '">Eliminar</button></td>';
         fila += '</tr>';
         return fila;
@@ -74,9 +139,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('formulario-crear-pelicula').addEventListener('submit', function(e) {
         e.preventDefault();
         var datosPelicula = {
-            tituloDeLaPelicula: document.getElementById('titulo-pelicula').value,
+            titulo_de_la_pelicula: document.getElementById('titulo-pelicula').value,
             poster: document.getElementById('poster-pelicula').value,
-            añoDeLanzamiento: document.getElementById('año-pelicula').value
+            año_de_lanzamiento: document.getElementById('año-pelicula').value
         };
         crearPelicula(datosPelicula).then(function() {
             limpiarFormulario();
@@ -88,38 +153,65 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Crea una nueva película usando el API
     function crearPelicula(datosPelicula) {
-        return fetch(apiUrl, {
+        return fetch(`${url}/rest/v1/peliculas`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'apikey': key,
+                'Authorization': `Bearer ${key}`,
+                ...corsHeaders
+            },
             body: JSON.stringify(datosPelicula)
         });
     }
 
-    // Elimina una película usando el API
-    function eliminarPelicula(id) {
-        return fetch(apiUrl + '/' + id, {
-            method: 'DELETE'
-        });
-    }
+   function eliminarPelicula(id) {
+    return fetch(`${url}/rest/v1/peliculas?id=eq.${id}`, {
+        method: 'DELETE',
+        headers: {
+            'apikey': key,
+            'Authorization': `Bearer ${key}`,
+            'Content-Type': 'application/json',
+            ...corsHeaders
+        }
+    });
+}
 
-    // Edita una película existente usando el API
-    function editarPelicula(id, datosPelicula) {
-        return fetch(apiUrl + '/' + id, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datosPelicula)
-        });
-    }
+function editarPelicula(id, datosPelicula) {
+    return fetch(`${url}/rest/v1/peliculas?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: { 
+            'Content-Type': 'application/json',
+            'apikey': key,
+            'Authorization': `Bearer ${key}`,
+            ...corsHeaders
+        },
+        body: JSON.stringify(datosPelicula)
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        return response.text(); // Cambia a text() para manejar posibles respuestas vacías
+    })
+    .then(text => {
+        console.log('Response text:', text); // Log para verificar la respuesta
+        const data = text ? JSON.parse(text) : {}; 
+        console.log("Película editada:", data);
+        return data;
+    })
+    .catch(error => {
+        console.error("Error editando la película", error);
+    });
+}
 
+    
     // Abre el modal de edición con los datos de la película
     function abrirModalEdicion(pelicula) {
         var modal = document.getElementById('modal-editar-pelicula');
         modal.style.display = 'block';
         document.getElementById('id-editar-pelicula').value = pelicula.id;
-        document.getElementById('editar-titulo-pelicula').value = pelicula.tituloDeLaPelicula;
-        document.getElementById('editar-año-pelicula').value = pelicula.añoDeLanzamiento;
+        document.getElementById('editar-titulo-pelicula').value = pelicula.titulo_de_la_pelicula;
+        document.getElementById('editar-año-pelicula').value = pelicula.año_de_lanzamiento;
         document.getElementById('editar-poster-pelicula').value = pelicula.poster;
     }
 
@@ -163,8 +255,8 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
         var id = document.getElementById('id-editar-pelicula').value;
         var datosPelicula = {
-            tituloDeLaPelicula: document.getElementById('editar-titulo-pelicula').value,
-            añoDeLanzamiento: document.getElementById('editar-año-pelicula').value,
+            titulo_de_la_pelicula: document.getElementById('editar-titulo-pelicula').value,
+            año_de_lanzamiento: document.getElementById('editar-año-pelicula').value,
             poster: document.getElementById('editar-poster-pelicula').value
         };
         editarPelicula(id, datosPelicula).then(function() {
@@ -195,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var titulo = document.getElementById('buscar-titulo-pelicula').value.toLowerCase();
         obtenerPeliculas().then(function(peliculas) {
             var resultados = peliculas.filter(function(pelicula) {
-                return pelicula.tituloDeLaPelicula.toLowerCase().includes(titulo);
+                return pelicula.titulo_de_la_pelicula.toLowerCase().includes(titulo);
             });
             cargarPeliculas(resultados);
             actualizarBotonVerTodas();
