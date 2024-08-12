@@ -2,7 +2,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/admin.js', 
+  entry: './src/admin.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
