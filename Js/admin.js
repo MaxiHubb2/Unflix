@@ -1,9 +1,8 @@
-require('dotenv').config();
-
 document.addEventListener("DOMContentLoaded", function() {
-    
-    const url = process.env.SUPABASE_URL;
-    const key = process.env.SUPABASE_KEY;
+    require('dotenv').config();
+
+    const url = SUPABASE_URL;
+    const key = SUPABASE_KEY;
     const supabaseClient = supabase.createClient(url, key); 
     const table = "peliculas";
 
