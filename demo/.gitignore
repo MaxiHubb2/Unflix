@@ -13,7 +13,6 @@ target/
 .springBeans
 .sts4-cache
 .env
-\Js\.env.js
 
 ### IntelliJ IDEA ###
 .idea

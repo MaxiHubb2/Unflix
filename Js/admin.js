@@ -1,8 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    const url = ENV.SUPABASE_URL;
-    const key = ENV.SUPABASE_KEY;
+    const url = SUPABASE_URL;
+    const key = SUPABASE_KEY;
     const supabaseClient = supabase.createClient(url, key); 
     const table = "peliculas";
 
