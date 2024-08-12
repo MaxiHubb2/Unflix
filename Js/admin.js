@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-    require('dotenv').config();
+import config from './config';
 
-    const url = SUPABASE_URL;
-    const key = SUPABASE_KEY;
+document.addEventListener("DOMContentLoaded", function() {
+
+    const url = config.SUPABASE_URL;
+    const key = config.SUPABASE_KEY;
     const supabaseClient = supabase.createClient(url, key); 
     const table = "peliculas";
 
