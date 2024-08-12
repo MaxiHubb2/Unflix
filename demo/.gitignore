@@ -13,6 +13,7 @@ target/
 .springBeans
 .sts4-cache
 .env
+\.env
 
 ### IntelliJ IDEA ###
 .idea
@@ -29,7 +30,7 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-node_modules/
+\node_modules
 
 ### VS Code ###
 .vscode/
